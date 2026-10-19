@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aarón Pérez Ruiz — Técnico en Sistemas y Redes</title>
+<meta name="description" content="Portfolio de Aarón Pérez Ruiz: técnico en Sistemas Microinformáticos y Redes y estudiante de Desarrollo de Aplicaciones Multiplataforma.">
+<meta name="theme-color" content="#070b14">
+<meta property="og:title" content="Aarón Pérez Ruiz — Técnico en Sistemas y Redes">
+<meta property="og:description" content="Técnico en Sistemas Microinformáticos y Redes, formándome como desarrollador de aplicaciones multiplataforma.">
+<meta property="og:image" content="foto.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%237c4dff'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='26' font-weight='700' text-anchor='middle' fill='white'%3EAP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
+<style>
+:root{
+  --bg:#070b14; --s1:#0e1526; --s2:#141d33; --tx:#e8ecf6; --mu:#8f9bb8;
+  --v:#7c4dff; --c:#22d3ee; --line:rgba(255,255,255,.09);
+  --head:"Sora","Segoe UI",system-ui,sans-serif; --body:"DM Sans","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;background:var(--bg)}
+body{font-family:var(--body);background:var(--bg);color:var(--tx);line-height:1.7;font-size:1.0625rem;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--c);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1100px,100% - 2.5rem);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.skip{position:absolute;left:-999px;top:0;background:var(--c);color:#041016;padding:.6rem 1rem;z-index:50}
+.skip:focus{left:1rem;top:1rem}
+.ic{width:1.35rem;height:1.35rem;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.grad{background:linear-gradient(90deg,var(--v),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+header{position:sticky;top:0;z-index:30;background:rgba(7,11,20,.75);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:4.2rem}
+.logo{font-family:var(--head);font-weight:700;font-size:1.2rem;text-decoration:none}
+nav ul{display:flex;gap:1.8rem;list-style:none}
+nav a{text-decoration:none;font-size:.95rem;font-weight:500;color:var(--mu);transition:color .2s}
+nav a:hover{color:#fff}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding:clamp(3rem,7vw,6rem) 0 clamp(3rem,6vw,5rem)}
+.aurora i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.45;animation:drift 16s ease-in-out infinite alternate}
+.aurora i:nth-child(1){width:480px;height:480px;background:var(--v);top:-120px;left:-100px}
+.aurora i:nth-child(2){width:420px;height:420px;background:var(--c);top:30%;right:-120px;opacity:.28;animation-duration:20s}
+.aurora i:nth-child(3){width:360px;height:360px;background:#3b82f6;bottom:-160px;left:35%;opacity:.25;animation-duration:24s}
+@keyframes drift{to{transform:translate(70px,50px) scale(1.15)}}
+.hero .wrap{position:relative}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+h1{font-family:var(--head);font-weight:700;font-size:clamp(2.8rem,7vw,5.4rem);line-height:1.02;letter-spacing:-.035em}
+.typed{margin-top:1.4rem;font-family:var(--head);font-weight:500;font-size:clamp(1.15rem,2.6vw,1.6rem);min-height:2.2em}
+.caret{display:inline-block;width:2px;height:1.1em;background:var(--c);margin-left:3px;vertical-align:-.15em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.intro{margin-top:.6rem;max-width:48ch;color:var(--mu)}
+.actions{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-block;padding:.85rem 1.7rem;border-radius:999px;font:inherit;font-weight:600;font-size:.97rem;text-decoration:none;cursor:pointer;border:1px solid var(--line);color:var(--tx);background:rgba(255,255,255,.04);transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.09)}
+.btn.primary{background:var(--v);border-color:var(--v);color:#fff}
+.btn.primary:hover{background:#8d63ff;box-shadow:0 10px 30px -8px rgba(124,77,255,.8)}
+
+/* Tarjeta de la foto */
+.portrait{justify-self:center;width:min(340px,100%);perspective:900px}
+.tilt{transition:transform .25s ease-out;will-change:transform}
+.glow{position:relative;border-radius:28px;padding:3px;overflow:hidden;box-shadow:0 30px 60px -25px rgba(124,77,255,.6)}
+.glow::before{content:"";position:absolute;inset:-60%;background:conic-gradient(var(--v),var(--c),var(--v));animation:spin 7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.flip{position:relative;display:block;width:100%;aspect-ratio:4/5;perspective:1200px;border:0;background:none;padding:0;cursor:pointer;font:inherit;color:inherit;text-align:left}
+.flip-inner{display:block;position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.flip.is-flipped .flip-inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;display:block;border-radius:25px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--s1)}
+.front img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.back{transform:rotateY(180deg);background:var(--s2);padding:2rem 1.8rem 4.2rem;display:flex;flex-direction:column;justify-content:center;gap:1.2rem}
+.back h3{font-family:var(--head);font-weight:600;font-size:1.55rem;line-height:1.2}
+.back dl{display:grid;gap:1rem}
+.back dt{font-size:.84rem;color:var(--c)}
+.back dd{font-size:1.02rem}
+.pill{position:absolute;left:50%;bottom:1.1rem;transform:translateX(-50%);display:flex;align-items:center;gap:.5rem;white-space:nowrap;padding:.5rem 1.1rem;border-radius:999px;background:rgba(7,11,20,.7);backdrop-filter:blur(8px);border:1px solid var(--line);font-size:.88rem;font-weight:500}
+.pill .ic{width:1rem;height:1rem;animation:spin 3s linear infinite}
+.flip:focus-visible{outline-offset:8px;border-radius:30px}
+
+/* Cinta de tecnologías */
+.marquee{overflow:hidden;border-block:1px solid var(--line);background:rgba(255,255,255,.02);padding:1.1rem 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.track{display:flex;gap:2.5rem;width:max-content;animation:scroll 38s linear infinite}
+.track span{font-family:var(--head);font-weight:500;color:var(--mu);white-space:nowrap}
+.track span::after{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--v);margin-left:2.5rem;vertical-align:middle}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* Secciones */
+section{padding:clamp(3.5rem,8vw,6.5rem) 0}
+h2{font-family:var(--head);font-weight:700;font-size:clamp(1.9rem,4.2vw,2.7rem);letter-spacing:-.025em;line-height:1.1;margin-bottom:.7rem}
+.lead{color:var(--mu);max-width:52ch;margin-bottom:2.6rem}
+.about{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(1.5rem,5vw,4rem)}
+.about .text{max-width:60ch;color:#c5cde0}
+.about p+p{margin-top:1rem}
+
+.hard{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.skill{--mx:50%;--my:50%;position:relative;display:flex;gap:1rem;align-items:center;border:1px solid var(--line);border-radius:16px;padding:1.2rem 1.4rem;background:radial-gradient(220px circle at var(--mx) var(--my),rgba(124,77,255,.22),transparent 70%),var(--s1);transition:transform .25s,border-color .25s}
+.skill:hover{transform:translateY(-3px);border-color:rgba(34,211,238,.5)}
+.badge{flex:none;width:2.8rem;height:2.8rem;border-radius:12px;background:rgba(124,77,255,.18);color:var(--c);display:grid;place-items:center}
+.skill b{display:block;font-weight:600;line-height:1.35}
+.skill small{color:var(--mu);font-size:.88rem}
+.sub{font-family:var(--head);font-size:1.15rem;font-weight:600;margin:2.6rem 0 1rem}
+.pills{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none}
+.pills li{padding:.5rem 1.1rem;border-radius:999px;border:1px solid var(--line);background:var(--s1);font-size:.95rem;transition:border-color .2s,transform .2s}
+.pills li:hover{border-color:var(--v);transform:translateY(-2px)}
+.pills small{color:var(--mu);margin-left:.35rem}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem)}
+.colhead{font-family:var(--head);font-size:1.15rem;font-weight:600;margin-bottom:1.6rem}
+.timeline{list-style:none;border-left:1px solid var(--line);margin-left:.45rem;display:grid;gap:2rem}
+.timeline li{position:relative;padding-left:1.8rem}
+.timeline li::before{content:"";position:absolute;left:-.5rem;top:.5rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--bg);border:2px solid var(--v)}
+.timeline li.now::before{background:var(--c);border-color:var(--c);animation:pulse 2s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,211,238,.6)}100%{box-shadow:0 0 0 12px rgba(34,211,238,0)}}
+.when{font-size:.9rem;font-weight:600;color:var(--c)}
+.timeline h3{font-family:var(--head);font-weight:600;font-size:1.1rem;line-height:1.35;margin:.15rem 0}
+.where{color:var(--mu);font-size:.97rem}
+
+.empty{display:flex;gap:1.4rem;align-items:flex-start;max-width:680px;border:1.5px dashed rgba(255,255,255,.18);border-radius:18px;padding:2rem;background:var(--s1)}
+.empty h3{font-family:var(--head);font-weight:600;font-size:1.2rem;margin-bottom:.4rem}
+.empty p{color:var(--mu)}
+
+.contact .box{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:28px;padding:clamp(2rem,6vw,4rem);background:var(--s1)}
+.contact .box::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:var(--v);filter:blur(110px);opacity:.35;right:-120px;top:-160px;animation:drift 14s ease-in-out infinite alternate}
+.contact .box>*{position:relative}
+.links{display:flex;flex-wrap:wrap;gap:.8rem}
+footer{color:var(--mu);font-size:.88rem;padding:1.6rem 0;border-top:1px solid var(--line)}
+
+dialog{border:0;border-radius:18px;width:min(920px,94vw);height:min(90vh,1000px);padding:0;overflow:hidden;background:var(--s1);color:var(--tx);margin:auto}
+dialog[open]{display:flex;flex-direction:column}
+dialog::backdrop{background:rgba(3,6,12,.8);backdrop-filter:blur(4px)}
+.dlg-bar{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;padding:.8rem 1rem;border-bottom:1px solid var(--line)}
+.dlg-bar strong{font-family:var(--head);font-weight:600;margin-right:auto}
+.dlg-bar a,.dlg-bar button{font:inherit;font-size:.9rem;font-weight:600;color:var(--tx);background:none;border:1px solid var(--line);border-radius:999px;padding:.35rem 1rem;text-decoration:none;cursor:pointer}
+.dlg-bar a:hover,.dlg-bar button:hover{background:var(--v);border-color:var(--v)}
+dialog iframe{flex:1;width:100%;border:0;background:#fff}
+
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.js .rv.in{opacity:1;transform:none}
+
+@media (max-width:860px){
+  .hero-grid,.about,.cols,.hard{grid-template-columns:1fr}
+  .portrait{order:-1;width:min(300px,86%)}
+}
+@media (max-width:560px){
+  nav li:nth-child(n+3):not(:last-child){display:none}
+  .empty{flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-chip" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+  <symbol id="i-term" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></symbol>
+  <symbol id="i-rot" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.4-5.7M20 4v5h-5"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Aarón Pérez Ruiz, inicio">AP<span class="grad">.</span></a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#trayectoria">Trayectoria</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+  <div class="hero" id="inicio">
+    <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <h1>Aarón<br>Pérez Ruiz</h1>
+          <p class="sr">Técnico en Sistemas Microinformáticos y Redes, estudiante de Desarrollo de Aplicaciones Multiplataforma.</p>
+          <p class="typed" aria-hidden="true">Soy <span class="grad" id="tw">técnico en Sistemas y Redes</span><i class="caret"></i></p>
+          <p class="intro">Me formo como desarrollador de aplicaciones multiplataforma, con una base sólida en equipos, sistemas operativos y virtualización.</p>
+          <div class="actions">
+            <button class="btn primary" type="button" id="open-cv">Ver CV</button>
+            <a class="btn" href="#contacto">Contactar conmigo</a>
+            <a class="btn" href="https://github.com/huracanon-netizen" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+        <div class="portrait">
+          <div class="tilt" id="tilt">
+            <div class="glow">
+              <button class="flip" type="button" id="flip" aria-pressed="false" aria-label="Tarjeta de presentación: pulsa para girarla">
+                <span class="flip-inner">
+                  <span class="face front">
+                    <img src="foto.jpg" alt="Retrato de Aarón Pérez Ruiz" width="467" height="640" fetchpriority="high">
+                    <span class="pill"><svg class="ic"><use href="#i-rot"/></svg>Pulsa para girar</span>
+                  </span>
+                  <span class="face back">
+                    <h3>Aarón Pérez Ruiz</h3>
+                    <dl>
+                      <div><dt>Edad</dt><dd id="edad">18 años</dd></div>
+                      <div><dt>Fecha de nacimiento</dt><dd>29 de noviembre de 2007</dd></div>
+                      <div><dt>Origen</dt><dd>Zaragoza, España</dd></div>
+                    </dl>
+                    <span class="pill"><svg class="ic"><use href="#i-rot"/></svg>Pulsa para volver</span>
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track" id="track">
+      <span>Windows</span><span>Linux</span><span>VMware</span><span>VirtualBox</span><span>Montaje de equipos</span><span>Administración de sistemas</span><span>Ofimática</span><span>Trabajo en equipo</span>
+    </div>
+  </div>
+
+  <section id="sobre-mi">
+    <div class="wrap about">
+      <div class="rv"><h2>Sobre mí</h2></div>
+      <div class="text rv">
+        <p>Soy técnico en Sistemas Microinformáticos y Redes y curso el Grado Superior en Desarrollo de Aplicaciones Multiplataforma en La Salle Santo Ángel.</p>
+        <p>Vengo del mundo de los equipos y los sistemas: montar y mantener ordenadores, trabajar con Windows y Linux y crear máquinas virtuales. Ahora sumo la programación a esa base.</p>
+        <p>Completé las prácticas del Grado Medio en un ayuntamiento, entre marzo y junio de 2025.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="habilidades">
+    <div class="wrap">
+      <div class="rv">
+        <h2>Habilidades</h2>
+        <p class="lead">Lo que he aprendido en mi formación y lo que aporto a un equipo.</p>
+      </div>
+      <div class="hard rv">
+        <div class="skill"><span class="badge"><svg class="ic"><use href="#i-chip"/></svg></span><div><b>Montaje y desmontaje de ordenadores</b></div></div>
+        <div class="skill"><span class="badge"><svg class="ic"><use href="#i-server"/></svg></span><div><b>Administración y mantenimiento de equipos</b></div></div>
+        <div class="skill"><span class="badge"><svg class="ic"><use href="#i-layers"/></svg></span><div><b>Virtualización</b><small>VMware y VirtualBox</small></div></div>
+        <div class="skill"><span class="badge"><svg class="ic"><use href="#i-term"/></svg></span><div><b>Sistemas operativos</b><small>Windows y Linux</small></div></div>
+        <div class="skill"><span class="badge"><svg class="ic"><use href="#i-doc"/></svg></span><div><b>Ofimática</b><small>Word, Excel y PowerPoint</small></div></div>
+      </div>
+      <div class="rv">
+        <h3 class="sub">Personales</h3>
+        <ul class="pills">
+          <li>Trabajo en equipo</li><li>Organización y responsabilidad</li><li>Capacidad de adaptación</li><li>Compromiso</li><li>Resiliencia</li>
+        </ul>
+        <h3 class="sub">Idiomas</h3>
+        <ul class="pills">
+          <li>Español<small>Nativo</small></li><li>Inglés<small>B1</small></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="trayectoria">
+    <div class="wrap">
+      <div class="rv">
+        <h2>Trayectoria</h2>
+        <p class="lead">Formación y experiencia, de lo más reciente a lo más antiguo.</p>
+      </div>
+      <div class="cols rv">
+        <div>
+          <h3 class="colhead">Formación</h3>
+          <ol class="timeline">
+            <li class="now">
+              <span class="when">2025 – Cursando</span>
+              <h3>Grado Superior en Desarrollo de Aplicaciones Multiplataforma</h3>
+              <span class="where">La Salle Santo Ángel</span>
+            </li>
+            <li>
+              <span class="when">2023 – 2025</span>
+              <h3>Grado Medio en Sistemas Microinformáticos y Redes</h3>
+              <span class="where">Davante (Medac)</span>
+            </li>
+            <li>
+              <span class="when">2019 – 2023</span>
+              <h3>Educación Secundaria Obligatoria</h3>
+              <span class="where">CPI Val de la Atalaya</span>
+            </li>
+          </ol>
+        </div>
+        <div>
+          <h3 class="colhead">Experiencia</h3>
+          <ol class="timeline">
+            <li>
+              <span class="when">Marzo – junio 2025</span>
+              <h3>Prácticas del Grado Medio en Sistemas Microinformáticos y Redes</h3>
+              <span class="where">Ayuntamiento · Administración local</span>
+              <!-- Añade aquí 2 o 3 tareas reales que hiciste, en un <p> -->
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <div class="wrap">
+      <div class="rv">
+        <h2>Proyectos</h2>
+        <p class="lead">Aquí irán mis proyectos con su código y su demo.</p>
+        <div class="empty">
+          <span class="badge"><svg class="ic"><use href="#i-code"/></svg></span>
+          <div>
+            <h3>Mi primer proyecto está en camino</h3>
+            <p>Estoy en pleno curso del Grado Superior y todavía no he publicado ningún proyecto. Cuando lo haga, lo verás aquí.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Cuando tengas uno, sustituye el bloque .empty por algo así:
+      <article class="skill"><div><b>Nombre del proyecto</b><small>Qué hace, en una frase.</small><br><a href="URL_CODIGO">Código</a> · <a href="URL_DEMO">Demo</a></div></article>
+      -->
+    </div>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="wrap rv">
+      <div class="box">
+        <h2>Hablemos</h2>
+        <p class="lead">Si quieres hablar conmigo sobre prácticas, trabajo o cualquier oportunidad, escríbeme.</p>
+        <div class="links">
+          <a class="btn primary" href="mailto:huracanon@gmail.com">huracanon@gmail.com</a>
+          <a class="btn" href="https://www.linkedin.com/in/aar%C3%B3n-p%C3%A9rez-ruiz-50610b388/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn" href="https://github.com/huracanon-netizen" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="year">2026</span> Aarón Pérez Ruiz</div>
+</footer>
+
+<dialog id="cv-dialog" aria-label="Currículum de Aarón Pérez Ruiz">
+  <div class="dlg-bar">
+    <strong>Currículum</strong>
+    <a href="Aaron_PerezCurriculum_Vitae.pdf" target="_blank" rel="noopener">Abrir en pestaña nueva</a>
+    <a href="Aaron_PerezCurriculum_Vitae.pdf" download>Descargar</a>
+    <button type="button" id="close-cv">Cerrar</button>
+  </div>
+  <iframe id="cv-frame" title="Currículum en PDF"></iframe>
+</dialog>
+
+<script>
+var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+document.getElementById("year").textContent=new Date().getFullYear();
+
+// Tarjeta giratoria
+var flip=document.getElementById("flip");
+flip.addEventListener("click",function(){
+  flip.setAttribute("aria-pressed",flip.classList.toggle("is-flipped"));
+});
+
+// Inclinación suave de la tarjeta con el ratón
+var tilt=document.getElementById("tilt");
+if(!reduce&&matchMedia("(hover:hover)").matches){
+  tilt.parentNode.addEventListener("mousemove",function(e){
+    var r=tilt.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    tilt.style.transform="rotateY("+(x*14)+"deg) rotateX("+(-y*14)+"deg)";
+  });
+  tilt.parentNode.addEventListener("mouseleave",function(){tilt.style.transform="";});
+}
+
+// Edad calculada (nacimiento: 29/11/2007)
+(function(){
+  var h=new Date(),e=h.getFullYear()-2007;
+  if(h.getMonth()<10||(h.getMonth()===10&&h.getDate()<29))e--;
+  document.getElementById("edad").textContent=e+" años";
+})();
+
+// Texto que se escribe solo
+(function(){
+  var el=document.getElementById("tw"),
+      w=["técnico en Sistemas y Redes","estudiante de Desarrollo Multiplataforma","futuro desarrollador de aplicaciones"],
+      i=0,j=w[0].length,del=true;
+  if(reduce)return;
+  (function tick(){
+    var t=w[i],d=90;
+    if(del){j--;d=40;if(j<=0){del=false;i=(i+1)%w.length;d=350}}
+    else{j++;if(j>=w[i].length){del=true;d=1800}}
+    el.textContent=w[i].slice(0,Math.max(j,0));
+    setTimeout(tick,d);
+  })();
+})();
+
+// Cinta de tecnologías en bucle
+var tr=document.getElementById("track");tr.innerHTML+=tr.innerHTML;
+
+// Brillo que sigue al ratón en las tarjetas
+document.querySelectorAll(".skill").forEach(function(c){
+  c.addEventListener("mousemove",function(e){
+    var r=c.getBoundingClientRect();
+    c.style.setProperty("--mx",(e.clientX-r.left)+"px");
+    c.style.setProperty("--my",(e.clientY-r.top)+"px");
+  });
+});
+
+// Aparición al hacer scroll
+var rv=document.querySelectorAll(".rv");
+if("IntersectionObserver" in window&&!reduce){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}});
+  },{threshold:.12});
+  rv.forEach(function(n){io.observe(n)});
+}else{rv.forEach(function(n){n.classList.add("in")})}
+
+// Visor del CV
+var dlg=document.getElementById("cv-dialog"),frame=document.getElementById("cv-frame");
+document.getElementById("open-cv").addEventListener("click",function(){
+  if(!frame.getAttribute("src"))frame.setAttribute("src","Aaron_PerezCurriculum_Vitae.pdf#view=FitH");
+  dlg.showModal();
+});
+document.getElementById("close-cv").addEventListener("click",function(){dlg.close()});
+dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
+</script>
+</body>
+</html>
